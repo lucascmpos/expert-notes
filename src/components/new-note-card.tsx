@@ -77,7 +77,7 @@ export function NewNoteCard({ onNoteCreated }: NewNoteCardProps) {
       setContent(transcription);
     };
 
-    speechRecognition.onerror = (event) => {
+    speechRecognition.onerror = () => {
       toast.error(
         "A API de Reconhecimento de fala não está disponível no seu navegador."
       );

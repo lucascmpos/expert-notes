@@ -68,7 +68,7 @@ export function NoteCard({ note, onNoteDeleted, onNoteEdited }: NoteCardProps) {
                 })}
               </span>
               <span className="text-xs text-gray-400">
-                Escreva algo novo para editar a nota...
+                escreva algo novo para editar a nota...
               </span>
             </div>
 
