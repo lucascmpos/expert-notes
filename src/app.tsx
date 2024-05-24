@@ -2,6 +2,7 @@ import { ChangeEvent, useEffect, useState } from "react";
 import logo from "./assets/logo.svg";
 import { NewNoteCard } from "./components/new-note-card";
 import { NoteCard } from "./components/note-card";
+import { toast } from "sonner";
 
 interface Note {
   id: string;
@@ -47,6 +48,21 @@ export function App() {
     setNotes(notesArray);
 
     localStorage.setItem("notes", JSON.stringify(notesArray));
+
+    toast.success("Nota deletada!");
+  }
+
+  function onNoteEdited(id: string, updatedContent: string) {
+    const updatedNotes = notes.map((note) => {
+      if (note.id === id) {
+        return { ...note, content: updatedContent, date: new Date() };
+      }
+      return note;
+    });
+
+    setNotes(updatedNotes);
+
+    localStorage.setItem("notes", JSON.stringify(updatedNotes));
   }
 
   function handleSearch(event: ChangeEvent<HTMLInputElement>) {
@@ -80,7 +96,12 @@ export function App() {
         <NewNoteCard onNoteCreated={onNoteCreated} />
         {filteredNotes.map((note) => {
           return (
-            <NoteCard key={note.id} note={note} onNoteDeleted={onNoteDeleted} />
+            <NoteCard
+              key={note.id}
+              note={note}
+              onNoteDeleted={onNoteDeleted}
+              onNoteEdited={onNoteEdited}
+            />
           );
         })}
       </div>
