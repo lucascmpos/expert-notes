@@ -1,4 +1,3 @@
-import React from "react";
 import { IoLogoGithub } from "react-icons/io";
 
 export function Footer() {
