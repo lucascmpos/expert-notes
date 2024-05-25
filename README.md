@@ -1,30 +1,59 @@
-# React + TypeScript + Vite
+<h1 align="center">
+    <img src="https://ik.imagekit.io/4qca61gsh/expertnotes.png?updatedAt=1716647202437">
+    
+   
+</h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Link to the app
 
-Currently, two official plugins are available:
+[Expert Notes](https://expert-dev-notes.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# 🔍 Summary
 
-## Expanding the ESLint configuration
+- [About](#-sobre)
+- [Tech Stack](#-tecnologias-utilizadas)
+- [How to download](#-como-baixar-o-projeto)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## 📗 About
 
-- Configure the top-level `parserOptions` property like this:
+This application consists of a notes website, where the user can add new notes by speaking into the microphone, or writing. He too you can search, edit and delete new notes. All your notes stay saved in your browser. Clean and responsive design.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+---
+
+## 💻 Functionalities
+
+- Responsiveness (Mobile First)
+- Improved UI/UX
+- Speech Recognition API integration
+
+---
+
+## 🚀 Technologies used
+
+The project was developed using the following technologies
+
+- React.js
+- JavaScript
+- Tailwind CSS
+- Figma
+- Speech Recognition API
+
+---
+
+## 🎮 How to download
+
+```bash
+
+    # Clone the repository
+    $ git clone https://github.com/lucascmpos/expert-notes/
+
+    # Install the dependencies
+    $ npm i
+
+    # Started the project
+    $ npm run dev
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+---
+
+Developed by 🐉 Lucas Campos
