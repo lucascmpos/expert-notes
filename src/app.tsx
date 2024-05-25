@@ -3,6 +3,7 @@ import logo from "./assets/logo.svg";
 import { NewNoteCard } from "./components/new-note-card";
 import { NoteCard } from "./components/note-card";
 import { toast } from "sonner";
+import { Notebook } from "lucide-react";
 
 interface Note {
   id: string;
@@ -80,10 +81,12 @@ export function App() {
 
   return (
     <div className="mx-auto max-w-6xl h-screen px-5 lg:px-0 my-12 space-y-4">
-      <img src={logo} alt="NLW expert" />
+      <h1 className="font-bold italic flex flex-row items-center justify-center gap-1 text-xl text-slate-500">
+        <Notebook className="mt-1" size={20} /> expert notes
+      </h1>
       <form className="w-full">
         <input
-          className="w-full outline-none bg-transparent text-3xl font-semibold tracking-tight placeholder:text-slate-500"
+          className="w-full outline-none bg-transparent text-2xl font-semibold tracking-tight placeholder:text-slate-600"
           type="text"
           placeholder="Busque suas notas..."
           onChange={handleSearch}

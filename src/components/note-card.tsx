@@ -54,7 +54,7 @@ export function NoteCard({ note, onNoteDeleted, onNoteEdited }: NoteCardProps) {
       </Dialog.Trigger>
       <Dialog.Portal>
         <Dialog.Overlay className="inset-0 fixed bg-black/50" />
-        <Dialog.Content className="fixed overflow-hidden md:left-1/2 md:top-1/2 md:inset-auto inset-0 md:-translate-x-1/2 md:-translate-y-1/2 md:max-w-[80vw] md:h-[60vh] w-full bg-slate-700 rounded-md flex flex-col outline-none">
+        <Dialog.Content className="fixed overflow-hidden md:left-1/2 md:top-1/2 md:inset-auto inset-0 md:-translate-x-1/2 md:-translate-y-1/2 md:max-w-[65vw] md:h-[75vh] w-full bg-slate-700 rounded-md flex flex-col outline-none">
           <Dialog.Close className="absolute right-0 top-0 bg-slate-800 p-1.5 text-slate-400 hover:text-slate-100 hover:bg-slate-900">
             <X />
           </Dialog.Close>
@@ -74,22 +74,22 @@ export function NoteCard({ note, onNoteDeleted, onNoteEdited }: NoteCardProps) {
 
             {isEditing ? (
               <textarea
-                className="text-sm leading-6 text-slate-400 bg-transparent resize-none flex-1 outline-none"
+                className="text-xl leading-6 text-slate-400 bg-transparent resize-none flex-1 outline-none"
                 value={updatedContent}
                 onChange={(e) => setUpdatedContent(e.target.value)}
               />
             ) : (
-              <p className="text-sm leading-6 text-slate-400">{note.content}</p>
+              <p className="text-lg leading-6 text-slate-400">{note.content}</p>
             )}
           </div>
           <div className="flex flex-row ">
             <button
               type="button"
               onClick={() => onNoteDeleted(note.id)}
-              className="w-full flex rounded-sm flex-row items-center gap-3 justify-center font-medium bg-transparent border-2 border-transparent hover:border-red-500 py-4 text-center text-sm text-slate-300  outline-none group"
+              className="w-full flex rounded-sm flex-row items-center hover:bg-slate-100 gap-3 justify-center font-medium bg-transparent border-2  border-transparent hover:border-red-500 py-4 text-center text-sm text-slate-300  outline-none group"
             >
               <Trash2 className="group-hover:text-red-500" size={25} />
-              <div className="text-lg flex flex-row gap-1">
+              <div className="text-lg flex flex-row group-hover:text-red-500 gap-1">
                 <span className="text-red-500 ">Apagar</span>
                 nota
               </div>
@@ -98,11 +98,13 @@ export function NoteCard({ note, onNoteDeleted, onNoteEdited }: NoteCardProps) {
             <button
               type="button"
               onClick={handleSaveEdit}
-              className="w-full rounded-sm flex flex-row items-center gap-3 justify-center font-medium bg-purple-700 border-2 border-purple-700 hover:border-purple-800 hover:bg-purple-800 py-4 text-center text-sm text-slate-300  outline-none group"
+              className="w-full rounded-sm flex flex-row items-center gap-3 justify-center font-medium bg-transparent border-2 border-transparent hover:border-purple-800 hover:bg-slate-100 py-4 text-center text-sm text-slate-300  outline-none group"
             >
-              <CheckCheck className="group-hover:text-purple-900" size={25} />
-              <div className="text-lg flex flex-row gap-1">
-                <span className=" ">Salvar</span>
+              <CheckCheck className="group-hover:text-purple-700" size={25} />
+              <div className="text-lg flex flex-row gap-1 group-hover:text-purple-700">
+                <span className="text-purple-500 group-hover:text-purple-700 ">
+                  Salvar
+                </span>
                 edição
               </div>
             </button>
