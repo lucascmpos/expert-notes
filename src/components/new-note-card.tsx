@@ -122,7 +122,7 @@ export function NewNoteCard({ onNoteCreated }: NewNoteCardProps) {
                 <button
                   type="button"
                   onClick={handleStartRecording}
-                  className="text-sm font-semibold leading-6 rounded-xl py-5 px-2  hover:bg-purple-900 text-slate-100 flex flex-row bg-purple-700 w-3/4 items-center gap-2 justify-center"
+                  className="text-sm font-semibold leading-6 rounded-xl py-5 px-2  hover:bg-purple-900 text-slate-100 flex flex-row bg-purple-700 w-3/4 md:w-1/2 items-center gap-2 justify-center"
                 >
                   <Mic />
                   Grave uma nota em áudio
@@ -130,7 +130,7 @@ export function NewNoteCard({ onNoteCreated }: NewNoteCardProps) {
                 <button
                   type="button"
                   onClick={handleStartWriting}
-                  className="text-sm font-semibold leading-6 rounded-xl py-5 px-2  hover:bg-slate-300    text-slate-900 flex flex-row bg-slate-100  w-3/4 items-center gap-2 justify-center"
+                  className="text-sm font-semibold leading-6 rounded-xl py-5 px-2  hover:bg-slate-300    text-slate-900 flex flex-row bg-slate-100 w-3/4 md:w-1/2 items-center gap-2 justify-center"
                 >
                   <Keyboard />
                   Escrever uma nota
