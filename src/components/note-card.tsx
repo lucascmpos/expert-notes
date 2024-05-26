@@ -24,24 +24,35 @@ export function NoteCard({ note, onNoteDeleted, onNoteEdited }: NoteCardProps) {
     setIsEditing(false);
     toast.success("Nota editada com sucesso!");
   }
+  function shouldBreakAll(text: string) {
+    return !/\s/.test(text);
+  }
+
+  const isLongWord = shouldBreakAll(note.content);
 
   return (
     <Dialog.Root open={isEditing} onOpenChange={setIsEditing}>
       <Dialog.Trigger className="rounded-md text-left flex flex-col bg-slate-800 p-5 gap-3 overflow-hidden hover:ring-2 hover:ring-slate-600 relative focus-visible:ring-2 outline-none focus-visible:ring-purple-700">
-        <div className="flex flex-row  justify-between w-full">
-          <div className="flex flex-col justify-between w-full">
-            <span className="text-sm font-medium text-slate-200">
+        <div className="flex flex-row justify-between w-full">
+          <div className="flex flex-col justify-between">
+            <span className="text-base font-medium text-slate-200">
               {formatDistanceToNow(note.date, {
                 locale: ptBR,
                 addSuffix: true,
               })}
             </span>
 
-            <p className="text-sm leading-6 text-slate-400">{note.content}</p>
+            <p
+              className={`text-sm mt-2 leading-6 text-slate-400 ${
+                isLongWord ? "break-all" : "break-words"
+              }`}
+            >
+              {note.content}
+            </p>
           </div>
-          <div className="flex-row gap-5 flex">
+          <div className="absolute right-5 top-5 flex-row flex gap-5">
             <Pencil
-              className="hover:text-purple-800"
+              className="hover:text-purple-700 "
               onClick={() => setIsEditing(true)}
             />
             <Trash2

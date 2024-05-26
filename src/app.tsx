@@ -79,7 +79,7 @@ export function App() {
       : notes;
 
   return (
-    <div className="mx-auto max-w-6xl h-screen px-5 lg:px-0 my-12 space-y-4">
+    <div className="mx-auto min-h-screen max-w-6xl px-5 lg:px-0 my-12 space-y-4">
       <h1 className="font-bold italic flex flex-row items-center justify-center gap-1 text-xl text-slate-500">
         <Notebook className="mt-1" size={20} /> expert notes
       </h1>

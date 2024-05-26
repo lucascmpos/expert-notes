@@ -98,14 +98,22 @@ export function NewNoteCard({ onNoteCreated }: NewNoteCardProps) {
   }
   return (
     <Dialog.Root>
-      <Dialog.Trigger className="rounded-md flex flex-col  bg-slate-700 hover:ring-2 hover:ring-slate-600 p-5 gap-3 text-left ">
-        <span className="text-sm font-medium text-slate-200">
-          Adicionar nota
-        </span>
-        <p className="text-sm leading-6 text-slate-400">
-          Grave uma nota em áudio que será convertida para texto automaticamente
-          ou escreva uma nota normalmente.
-        </p>
+      <Dialog.Trigger className="rounded-md group relative flex flex-col  bg-slate-700 hover:ring-2 hover:ring-slate-600 p-5 gap-3 text-left ">
+        <div className="flex flex-col justify-between w-full">
+          <div className="flex flex-row w-full justify-between">
+            <span className="text-base font-medium text-slate-200">
+              Adicionar nota
+            </span>
+            <CirclePlus
+              className="group-hover:text-purple-700 absolute top-5 right-5"
+              size={25}
+            />
+          </div>
+          <p className="text-sm mt-1 leading-6  text-slate-400">
+            Grave uma nota em áudio que será convertida para texto
+            automaticamente ou escreva uma nota normalmente.
+          </p>
+        </div>
       </Dialog.Trigger>
       <Dialog.Portal>
         <Dialog.Overlay className="inset-0 fixed bg-black/50" />
